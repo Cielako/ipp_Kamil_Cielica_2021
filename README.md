@@ -25,8 +25,8 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
 - Bootstrap
 
 Harmonogram:
-16.03.2021 - Propozycja projektu 
-0.0.2021  - Etap I
-0.0.2021  - Etap II
-0.0.2021  - Etap III
-0.0.2021  - Etap IV           
+- 16.03.2021 - Propozycja projektu 
+- 0.0.2021  - Etap I
+- 0.0.2021  - Etap II
+- 0.0.2021  - Etap III
+- 0.0.2021  - Etap IV           

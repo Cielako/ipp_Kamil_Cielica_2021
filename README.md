@@ -9,7 +9,8 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
 - panel administratora serwisu (możliwość dodawania i usuwania produktów z poziomu strony internetowej)
 - wyświetlanie wszystkich produktów (podział na kategorie produktów)
 - strona poszczególnego produktu
-- możliwość dodawania produktów do koszyka
+- dodawanie produktów do koszyka
+- wyświetlanie zawartości koszyka 
 - wyszukiwanie produktów:
   - nazwa
   - kategoria
@@ -23,3 +24,9 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
 - MySQL
 - Bootstrap
 
+Harmonogram:
+16.03.2021 - Propozycja projektu 
+0.0.2021  - Etap I
+0.0.2021  - Etap II
+0.0.2021  - Etap III
+0.0.2021  - Etap IV           

@@ -26,7 +26,22 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
 
 Harmonogram:
 - 16.03.2021 - Propozycja projektu 
-- 0.0.2021  - Etap I
-- 0.0.2021  - Etap II
-- 0.0.2021  - Etap III
-- 0.0.2021  - Etap IV           
+- 30.03.2021  - Etap I
+  - [ ] projekt wyglądu strony 
+  - [ ] projekt struktury bazy danych
+- 13.04.2021  - Etap II
+   - [ ] wyświetlanie zawratości bazy danych (produktów)
+   - [ ] strona poszczgólnego produktu
+   - [ ] korekty w kodzie (jeśli zaistnieją jakieś bugi)
+- 27.04.2021  - Etap III
+   - [ ] rejestracja/logowanie do sklepu
+   - [ ] rozbudowanie panelu administracyjnego (dodawanie/usuwanie/edycja produktów z poziomu witryny)
+   - [ ] korekty w kodzie (jeśli zaistnieją jakieś bugi)
+- 11.05.2021  - Etap IV
+  - [ ] dodawanie produktów do koszyka
+  - [ ] wyświetlanie zawartości koszyka
+  - [ ] korekty w kodzie (jeśli zaistnieją jakieś bugi)
+- 25.05.2021  - Etap V 
+  - [ ] implementacja dodatkowych funkcjonalności (nowe pomysły podczas pracy nad projektem)
+- 1.06.2021  - Etap VI (Czas na drobne poprawki przed prezentacją końcową)
+- 8.06.2021  - Prezentacja końcowa                        

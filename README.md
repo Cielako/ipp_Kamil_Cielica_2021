@@ -16,7 +16,7 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
   - kategoria
   - kod produktu  
 
-#Wykorzystane Technologie:
+# Wykorzystane Technologie:
 - PHP
 - JS/JQuery
 - HTML
@@ -24,7 +24,7 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
 - MySQL
 - Bootstrap
 
-Harmonogram:
+# Harmonogram:
 - 16.03.2021 - Propozycja projektu 
 - 30.03.2021  - Etap I
   - [ ] projekt wyglądu strony 

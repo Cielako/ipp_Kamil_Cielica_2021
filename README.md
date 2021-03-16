@@ -24,7 +24,8 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
 - MySQL
 - Bootstrap
 
-# Wizja graficzna 
+# Wizja graficzna strony głównej 
+![Wizja graficzna strony głównej](/wizja.png?raw=true "wizja")
 
 # Harmonogram:
 - 16.03.2021 - Propozycja projektu 

@@ -1,0 +1,30 @@
+body{
+    background-color: lightblue;
+}
+/*Header Navigation Bar*/
+header .navbar{
+    width: auto;
+    height: auto;   
+}
+
+header .navbar-nav {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header .nav-link:hover,.nav-link:active, .nav-link:focus {
+    color: black !important;
+}
+
+header .srchbar {
+    border-bottom: 1px solid gray!important;
+}
+
+/* Main */
+
+
+/* Footer*/
+footer {
+    border-top: 1px solid gray !important;
+}
+

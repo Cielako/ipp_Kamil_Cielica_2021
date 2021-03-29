@@ -30,8 +30,8 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
 # Harmonogram:
 - 16.03.2021 - Propozycja projektu 
 - 30.03.2021  - Etap I
-  - [ ] projekt wyglądu strony 
-  - [ ] projekt struktury bazy danych
+  - [x] projekt wyglądu strony 
+  - [x] projekt struktury bazy danych
 - 13.04.2021  - Etap II
    - [ ] wyświetlanie zawratości bazy danych (produktów)
    - [ ] strona poszczególnego produktu

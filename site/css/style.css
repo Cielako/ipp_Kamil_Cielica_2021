@@ -1,5 +1,13 @@
+html{
+    height: 100%;
+}
 body{
     background-color: lightblue;
+    position: relative;
+	min-height: 100vh;
+	color: #555555;
+	margin: 0;
+	padding-bottom: 100px; /* Same height as footer */
 }
 /*Header Navigation Bar*/
 header .navbar{
@@ -21,7 +29,23 @@ header .srchbar {
 }
 
 /* Main */
+.content-wrapper {
+    max-width: 1200px;
+    max-height: 100vh;
+    margin: 0 auto;
+}
 
+main .products .products-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0 0 0;
+}
+
+/* Products */
+
+/* Product */
 
 /* Footer*/
 footer {

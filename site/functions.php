@@ -25,6 +25,7 @@ echo <<<EOT
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css/">
+    <title>$title</title> 
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -48,8 +49,8 @@ echo <<<EOT
                     <!-- Navbar menu -->
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
-                            <li class="nav-item"><a class="nav-link"  href="#">Strona Główna</a></li>
-                            <li class="nav-item"><a class="nav-link"  href="#">Produkty</a></li>
+                            <li class="nav-item"><a class="nav-link"  href="index.php">Strona Główna</a></li>
+                            <li class="nav-item"><a class="nav-link"  href="index.php?page=products">Produkty</a></li>
                             <li class="nav-item"><a class="nav-link"  href="#">Kontakt</a></li>
                         </ul>
                     </div>

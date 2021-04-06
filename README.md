@@ -33,8 +33,8 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
   - [x] projekt wyglądu strony 
   - [x] projekt struktury bazy danych
 - 13.04.2021  - Etap II
-   - [ ] wyświetlanie zawratości bazy danych (produktów)
-   - [ ] strona poszczególnego produktu
+   - [x] wyświetlanie zawratości bazy danych (produktów)
+   - [x] strona poszczególnego produktu
    - [ ] korekty w kodzie (jeśli zaistnieją jakieś bugi)
 - 27.04.2021  - Etap III
    - [ ] rejestracja/logowanie do sklepu

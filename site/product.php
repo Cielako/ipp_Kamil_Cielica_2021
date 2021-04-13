@@ -4,7 +4,7 @@ if (isset($_GET['id'])) {
     // Przygotuj zapytanie i wykonaj wraz z zabezpieczeniem przed SQL injection
     $stmt = $pdo->prepare('SELECT * FROM products WHERE id = ?');
     $stmt->execute([$_GET['id']]);
-    // Wybierz produkty z bazy danych i zwróc wynik jako tablicę
+    // Wybierz produkt z bazy danych i zwróc wynik jako tablicę
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
     // Sprawdzamy czy produkt istnieje
     if (!$product) {

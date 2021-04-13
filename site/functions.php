@@ -62,10 +62,10 @@ echo <<<EOT
             </nav>
             <!-- Search Bar -->
             <nav class="navbar srchbar navbar-light bg-light">
-                <form class="container mx-auto">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Czego szukasz?" >
-                        <button class="btn btn-outline-dark input-group-text" id="basic-addon1" type="submit">Szukaj</button>
+                <form name="searchform" method ="POST" action ="index.php?page=search&se" class="container mx-auto">
+                    <div class="input-group">                    
+                        <input name="se" type="text" class="form-control" placeholder="Czego szukasz?">
+                        <input type="submit" class="btn btn-outline-dark input-group-text" id="basic-addon1" value="Szukaj">
                     </div>
                 </form>
             </nav>

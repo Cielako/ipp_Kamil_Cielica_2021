@@ -1,6 +1,6 @@
 <?php 
 // Liczba produktów na konkretnej stronie
-$num_products_each_page = 6;
+$num_products_each_page = 4;
 // Obecna strona, w pasku URL będzie miała postać index.php?page=products&p=1 .... etc.
 $curr_page = isset($_GET['p']) && is_numeric(($_GET['p'])) ? (int)$_GET['p']:1;
 // Przygotuj zapytanie o produkty z bazy danych sortując według daty dodania

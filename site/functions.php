@@ -16,7 +16,17 @@ function pdo_connect_mysql() {
 
 // Szablon nagłówka
  function template_header($title) {
-echo <<<EOT
+    // Sprawdzenie, czy użytkownik jest zalogowany
+    function login_session_check(){
+        if (isset($_SESSION['login'])){
+            return "<a class='nav-link' href='index.php?page=logout'><i class='fa fa-user-o' style='font-size: 36px;'></i> Wyloguj</a>";
+        }
+        else{
+            return "<a class='nav-link' href='index.php?page=login'><i class='fa fa-user-o' style='font-size: 36px;'></i> Zaloguj</a><a class='nav-link' href='index.php?page=register'> Zarejestruj</a>";
+        }
+    }
+    $login_session_check = login_session_check();
+echo <<<HTML
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -24,7 +34,7 @@ echo <<<EOT
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css/">
+    <link rel="stylesheet" href="./css/style.css">
     <title>$title</title> 
 
     <!-- Font Awesome -->
@@ -56,7 +66,7 @@ echo <<<EOT
                     </div>
                     <!-- Navbar user icon -->
                     <ul class="nav navbar-nav flex-row flex-nowrap">
-                        <li class="nav-item"><a class="nav-link" href="https://www.facebook.com/MEBLE-DELUX-112775073808073" target="blank"><i class="fa fa-user-o" style="font-size: 36px;"></i> użytkownik</a></li>
+                    <li class='nav-item'>$login_session_check</li>
                     </ul>
                 </div>
             </nav>
@@ -73,13 +83,13 @@ echo <<<EOT
     </header>
     <!--Main site -->
     <main class="position-absolute top-50 start-50 translate-middle">
-EOT;
+HTML;
 }
  
  // Szablon stopki
 function template_footer() {
     $year = date("Y");
-echo <<<EOT
+echo <<<HTML
 </main>
 
 <!-- Footer -->
@@ -95,6 +105,6 @@ echo <<<EOT
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </html>
-EOT;    
+HTML;    
 }
 ?>

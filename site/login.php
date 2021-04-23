@@ -17,12 +17,10 @@
         $stmt = $pdo->prepare('SELECT * FROM users WHERE login = ? AND passw = ? ');
         $stmt->execute([$_POST['log'],hash('sha256',$_POST['pass'])]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        
         if ($user['login'] == $_POST['log'] && $user['passw'] == hash('sha256',$_POST['pass'])){
             $_SESSION['login'] = $_POST['log'];
-
             echo "<script>alert('Zalogowano');window.location.href='index.php'</script>";
-           
-            #header("Location: index.php");
         }
         elseif ($user['login'] != $_POST['log'] || $user['passw'] != hash('sha256',$_POST['pass'])){            
             echo("Wprowadzono zły login lub hasło !");

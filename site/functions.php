@@ -16,16 +16,25 @@ function pdo_connect_mysql() {
 
 // Szablon nagłówka
  function template_header($title) {
+
     // Sprawdzenie, czy użytkownik jest zalogowany
-    function login_session_check(){
+    function login_session_options(){
         if (isset($_SESSION['login'])){
-            return "<a class='nav-link' href='index.php?page=logout'><i class='fa fa-user-o' style='font-size: 36px;'></i> Wyloguj</a>";
+            return "<li class='nav-item'><a class='nav-link' href='index.php?page=logout'>Wyloguj</a></li>";
         }
         else{
-            return "<a class='nav-link' href='index.php?page=login'><i class='fa fa-user-o' style='font-size: 36px;'></i> Zaloguj</a><a class='nav-link' href='index.php?page=register'> Zarejestruj</a>";
+            return "<li><a class='nav-link' href='index.php?page=login'>Zaloguj</a></li>
+            <li><a class='nav-link' href='index.php?page=register'>Zarejestruj</a></li>";
         }
     }
-    $login_session_check = login_session_check();
+
+    function display_user_login()
+    {
+        if (isset($_SESSION['login'])) return $_SESSION['login'];
+        else return "gość";
+    }
+    $display_user_login = display_user_login();
+    $login_session_options = login_session_options();
 echo <<<HTML
 
 <!DOCTYPE html>
@@ -65,9 +74,14 @@ echo <<<HTML
                         </ul>
                     </div>
                     <!-- Navbar user icon -->
-                    <ul class="nav navbar-nav flex-row flex-nowrap">
-                    <li class='nav-item'>$login_session_check</li>
-                    </ul>
+                    <div class="dropdown">
+                        <a class="btn btn-light dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class='fa fa-user-o' style='font-size: 24px;'> $display_user_login</i> 
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            $login_session_options
+                        </ul>
+                    </div>
                 </div>
             </nav>
             <!-- Search Bar -->

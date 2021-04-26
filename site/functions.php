@@ -15,12 +15,17 @@ function pdo_connect_mysql() {
 }
 
 // Szablon nagłówka
- function template_header($title) {
+function template_header($title) {
 
     // Sprawdzenie, czy użytkownik jest zalogowany
     function login_session_options(){
         if (isset($_SESSION['login'])){
-            return "<li class='nav-item'><a class='nav-link' href='index.php?page=logout'>Wyloguj</a></li>";
+            if ($_SESSION['login'] == 'admin')
+            {
+                return "<li class='nav-item'><a class='nav-link' href='index.php?page=logout'>Wyloguj</a></li>
+                <li class='nav-item'><a class='nav-link' href='index.php?page=add_product'>Dodaj nowy produkt</a></li>";
+            }
+            else return "<li class='nav-item'><a class='nav-link' href='index.php?page=logout'>Wyloguj</a></li>";
         }
         else{
             return "<li><a class='nav-link' href='index.php?page=login'>Zaloguj</a></li>
@@ -35,6 +40,7 @@ function pdo_connect_mysql() {
     }
     $display_user_login = display_user_login();
     $login_session_options = login_session_options();
+
 echo <<<HTML
 
 <!DOCTYPE html>

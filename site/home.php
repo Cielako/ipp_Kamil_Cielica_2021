@@ -1,7 +1,7 @@
 <?=template_header('Strona Główna')?>
 <?php
 // Wyświetl 4 nowo dodane produkty
-$stmt = $pdo->prepare('SELECT * FROM products ORDER BY date_added DESC LIMIT 3');
+$stmt = $pdo->prepare('SELECT * FROM products ORDER BY date_added DESC LIMIT 4');
 $stmt->execute();
 $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

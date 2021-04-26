@@ -38,8 +38,8 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
    - [ ] korekty w kodzie (jeśli zaistnieją jakieś bugi)
 - 27.04.2021  - Etap III
    - [x] rejestracja/logowanie do sklepu
-   - [ ] rozbudowanie panelu administracyjnego (dodawanie/usuwanie/edycja produktów z poziomu witryny)
-   - [ ] korekty w kodzie (jeśli zaistnieją jakieś bugi)
+   - [x] rozbudowanie panelu administracyjnego (dodawanie/usuwanie/edycja produktów z poziomu witryny)
+   - [x] korekty w kodzie (jeśli zaistnieją jakieś bugi)
 - 11.05.2021  - Etap IV
   - [ ] dodawanie produktów do koszyka
   - [ ] wyświetlanie zawartości koszyka

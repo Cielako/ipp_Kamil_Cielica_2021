@@ -1,4 +1,5 @@
-<?php 
-    unset($_SESSION['login']);
+<?php
+    session_unset();
+    session_start();
     header('Location: index.php');
 ?>

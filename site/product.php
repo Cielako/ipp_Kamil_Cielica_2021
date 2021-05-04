@@ -19,16 +19,30 @@ if (isset($_GET['id'])) {
 
 <?=template_header('Produkt')?>
 
-<div class="product productpage content-wrapper">
-    <img src="imgs/<?=$product['img']?>"alt="<?=$product['name']?>">
-    <div>
+<div class="productpage">
+    <div id="productpage_left">
+        <img src="imgs/<?=$product['img']?>"alt="<?=$product['name']?>">
+    </div>
+    <div id="productpage_right">
         <h1 class="name"><?=$product['name']?></h1>
-        <span class="price">
-            Cena: <?=$product['price']?> zł
-        </span>
-       <h2>Opis produktu:</h2>
+        <span class="price">Cena: <?=$product['price']?> zł</span>
+        <br>
+       <form action="index.php?page=shopping_cart" method="POST" >
+            <?php 
+                # Dodaj do koszyka jeśli zalogowany
+                if(isset($_SESSION['login'])){
+                    echo <<<HTML
+                        <input type="hidden" name="product_id" value="$product[id]">
+                        <input type="number" name="quantity" value="1" min="1" max="$product[quantity]"><span> Pozostało: $product[quantity]  sztuk </span><br>
+                        <input type='submit' value='Dodaj do koszyka'>
+                    HTML;
+                }
+                else echo("Zaloguj się aby móc dokonać zakupu")
+            ?>     
+       </form>
         <div class="description">
-            <?=$product['desc']?>
+            <h2>Opis produktu:</h2>
+            <span><?=$product['desc']?></span>
         </div>
         </br>
         <?php

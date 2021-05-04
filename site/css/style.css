@@ -35,53 +35,50 @@ header .srchbar {
 /* Main */
 .content-wrapper {
     padding-top: 150px;
-    max-width: 600px;
     margin: 0 auto;
 }
 
-main .products .products-wrapper{
+main .products-wrapper{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    background-color: aliceblue;
-    height: auto;
-    width: auto;   
+    justify-content: center;
+    background-color: aliceblue; 
 }
+
 
 /* Product */
 main  .product {
     display: block;
-    justify-content: space-between;
+    text-align: center;
     margin:20px 20px 20px 20px ;
-    max-width: 300px;
-    max-height: 300px;
-    width: auto;
+    width: 25%;
     height: auto;
+    overflow: visible;
+}
+main  .product:hover {
+    background-color: rgb(230, 224, 224);
+    border-radius: 10px ;
 }
 main  .product img {
     display: block;
     margin: auto;
-    height: auto; 
-    width: auto; 
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 35%;
+    max-height: 35%;
 }
-main  .product h1 {
-    display: block;
-	font-size: calc(10px + 1vw);
+main  .product p {
+    max-width: 15rem;
+    margin: auto;
+	font-size: calc(5px + 1vw);
 	font-weight: normal;
-    width: auto;
-	margin: 0;
-	padding: 20px 20px 10px 0;
     color: black;
+    display: block;
 }
 main .product .price {
-	display: block;
 	font-size: calc(10px + 0.70vw);
     margin-top: 5px ;
 	color: #999999;
-    float: left;
+    text-align: left;
 }
 main .product .description {
     display: block;
@@ -89,38 +86,43 @@ main .product .description {
 }
 
 /* Product Page */
-main .productpage {
-    display: flex ;
-    flex-direction: row;
-    max-width: 1200px;
-    max-height: 900px;
-    background-color: lightcyan;
+.productpage {
+    display: flex;
+    background-color: rgb(51, 187, 187);
+    height: 60vh;
 }
-main .productpage img {
+#productpage_left, #productpage_right {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.productpage img {
     display: block;
-    margin: auto;
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 80%;
+    max-height: 80%;
 }
-main  .productpage h1 {
+.productpage h1 {
+    margin-top: auto;
 	font-size: calc( 30px + 1vw);
     text-transform: capitalize;
-	margin: 0;
-	padding: 20px 20px 10px 0;
-    color: red;
+    color: black;
 }
-main .productpage button{
-    display: block;
-    width: auto;
-    height: auto;
-}
-main .productpage h2 {
-    display: block;
+.productpage h2 {
 	font-size: calc( 15px + 1vw);
 	text-transform: capitalize;
-	margin-top: 80px;
-    color: red;
+	margin-top: 60px;
+    color: black;
 }
+.productpage button{
+    display: block;
+    width: 100px;
+    margin: auto;
+}
+
 
 /*Pagination Buttons */
 main > .products .buttons a {
@@ -142,6 +144,15 @@ main > .products .buttons {
 	text-align: right;
 	padding-bottom: 100px;
 }
+
+/* Cart */
+main .cart table thead td {
+    text-align: center;
+    padding: 35px;
+    padding-bottom: 0px;
+}
+
+
 /* Footer*/
 footer {
     border-top: 1px solid gray !important;

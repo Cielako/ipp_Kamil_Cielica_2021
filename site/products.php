@@ -1,6 +1,6 @@
 <?php 
 // Liczba produktów na konkretnej stronie
-$num_products_each_page = 4;
+$num_products_each_page = 6;
 // Obecna strona, w pasku URL będzie miała postać index.php?page=products&p=1 .... etc.
 $curr_page = isset($_GET['p']) && is_numeric(($_GET['p'])) ? (int)$_GET['p']:1;
 // Przygotuj zapytanie o produkty z bazy danych sortując według daty dodania
@@ -23,7 +23,7 @@ $total_products = $pdo->query('SELECT * FROM products')->rowCount();
             <?php foreach ($products as $product): ?>
                 <a href="index.php?page=product&id=<?=$product['id']?>" class="product">
                     <img src="imgs/<?=$product['img']?>" alt="<?=$product['name']?>">
-                    <span class="name"><h1><?=$product['name']?></h1></span>
+                    <span class="name"><p><?=$product['name']?></p></span>
                     <span class="price">
                         <?=$product['price']?> zł
                     </span>

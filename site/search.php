@@ -55,7 +55,7 @@ if (isset($_POST['se'])) {
             <?php foreach ($products as $product): ?>
                 <a href="index.php?page=product&id=<?=$product['id']?>" class="product">
                     <img src="imgs/<?=$product['img']?>" alt="<?=$product['name']?>">
-                    <span class="name"><h1><?=$product['name']?></h1></span>
+                    <span class="name"><p><?=$product['name']?></p></span>
                     <span class="price">
                         <?=$product['price']?> zł
                     </span>

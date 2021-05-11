@@ -40,6 +40,7 @@ function template_header($title) {
     }
     $display_user_login = display_user_login();
     $login_session_options = login_session_options();
+    $num_items_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 
 echo <<<HTML
 
@@ -87,6 +88,7 @@ echo <<<HTML
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             $login_session_options
                         </ul>
+                        <a href="index.php?page=shopping_cart" class="cart_icon"><i class="fa fa-shopping-cart"></i><sup>$num_items_cart</sup></a>
                     </div>
                 </div>
             </nav>

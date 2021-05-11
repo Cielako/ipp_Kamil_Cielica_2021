@@ -32,6 +32,10 @@ header .srchbar {
     border-bottom: 1px solid gray!important;
 }
 
+header .cart_icon{
+    color: #434f61;
+}
+
 /* Main */
 .content-wrapper {
     padding-top: 150px;
@@ -145,11 +149,24 @@ main > .products .buttons {
 	padding-bottom: 100px;
 }
 
-/* Cart */
-main .cart table thead td {
+/* Shopping Cart */
+main .cart h1 {
+    text-align: center;
+}
+main .cart table td {
     text-align: center;
     padding: 35px;
-    padding-bottom: 0px;
+}
+main .cart table a {
+    color: #4e5c70;
+}
+main .cart table tr {
+    border-bottom: 1px solid black ;
+}
+
+main .cart .subtotal {
+    padding-top: 10px;
+    text-align: right;
 }
 
 

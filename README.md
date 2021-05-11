@@ -41,8 +41,8 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
    - [x] rozbudowanie panelu administracyjnego (dodawanie/usuwanie/edycja produktów z poziomu witryny)
    - [x] korekty w kodzie (jeśli zaistnieją jakieś bugi)
 - 11.05.2021  - Etap IV
-  - [ ] dodawanie produktów do koszyka
-  - [ ] wyświetlanie zawartości koszyka
+  - [x] dodawanie produktów do koszyka
+  - [x] wyświetlanie zawartości koszyka
   - [ ] korekty w kodzie (jeśli zaistnieją jakieś bugi)
 - 25.05.2021  - Etap V 
   - [ ] implementacja dodatkowych funkcjonalności (nowe pomysły podczas pracy nad projektem)

@@ -1,5 +1,5 @@
 <?php
-$num_products_each_page = 4;
+$num_products_each_page = 6;
 // Obecna strona, w pasku URL będzie miała postać index.php?page=products&p=1 .... etc.
 $curr_page = isset($_GET['p']) && is_numeric(($_GET['p'])) ? (int)$_GET['p']:1;
 // Sprawdź czy parametr se jest sprecyzowany w pasku URL

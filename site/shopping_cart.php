@@ -30,6 +30,25 @@
         exit;
     }
 
+    //Aktualizowanie ilości produktów w koszyku
+    if (isset($_POST['update']) && isset($_SESSION['cart'])){
+        foreach($_POST as $p => $v){
+            echo("<p>'.$v.'</p>");
+            if(strpos($p, 'quantity') !== false && is_numeric($v)){
+                $id = str_replace('quantity_','',$p);
+                $quantity = (int)$v;
+                // Zawsze sprawdzamy i wprowadzamy zmiany
+                if(isset($_SESSION['cart']) && is_numeric($id) && $quantity > 0){
+                    // Aktualizujemy ilośc danego produktu
+                    $_SESSION['cart'][$id] = $quantity;
+                }
+            }
+        }
+        // zapobiegamy ponownemu wykonaniu się czynności 
+        header('location: index.php?page=shopping_cart');
+        exit;
+    }
+
     // Usuwanie zawartości koszyka (konkretnego produktu)
     if (isset($_GET['remove']) && is_numeric($_GET['remove'])){
         if (isset($_SESSION['cart']) && isset($_SESSION['cart'][$_GET['remove']])){
@@ -63,52 +82,57 @@
 <?=template_header('Koszyk')?>
     <div class="cart">
         <h1>Zawartość Twojego koszyka</h1>
-        <table>
-            <thead>
-                <tr>
-                    <td colspan="2">Nazwa Produktu</td>
-                    <td>Ilość</td>
-                    <td>Cena za sztukę</td>
-                    <td>Suma</td>
-                    <td></td>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                    if (empty($products)){
-                        echo<<<HTML
-                            <tr>
-                                <td colspan="6" style="text-align:center;">Twój koszyk jest pusty</td>
-                            </tr>
-                        HTML;
-                    }
-                else foreach ($products as $product):
-                ?>
-                <tr>
-                    <td class="img">
-                        <a href="index.php?page=product&id=<?=$product['id']?>">
-                            <img src="imgs/<?=$product['img']?>" width="50" height="50" alt="<?=$product['name']?>">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="index.php?page=product&id=<?=$product['id']?>"><?=$product['name']?></a>
-                    </td>
-                    <td class="quantity">
-                        <input type="number" name="quantity_<?=$product['id']?>" value="<?=$cart_products[$product['id']]?>" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>
-                    </td>
-                    <td class="price"><?=$product['price']?> zł</td>
-                    <td class="price"><?=$product['price'] * $cart_products[$product['id']]?> zł</td>
-                    <td>
-                        <a href="index.php?page=shopping_cart&remove=<?=$product['id']?>" class="remove"><i class="fa fa-trash"></i></a>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-        <div class="subtotal">
-            <span class="text">Kwota do zapłaty</span>
-            <span class="price"> <?=$subtotal?> zł </span>
-        </div>
-       
+        <form action="index.php?page=shopping_cart" method="POST">
+            <table>
+                <thead>
+                    <tr>
+                        <td colspan="2">Nazwa Produktu</td>
+                        <td>Ilość</td>
+                        <td>Cena za sztukę</td>
+                        <td>Suma</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        if (empty($products)){
+                            echo<<<HTML
+                                <tr>
+                                    <td colspan="6" style="text-align:center;">Twój koszyk jest pusty</td>
+                                </tr>
+                            HTML;
+                        }
+                        else foreach ($products as $product):
+                    ?>
+                        <tr>
+                            <td class="img">
+                                <a href="index.php?page=product&id=<?=$product['id']?>">
+                                    <img src="imgs/<?=$product['img']?>" width="50" height="50" alt="<?=$product['name']?>">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="index.php?page=product&id=<?=$product['id']?>"><?=$product['name']?></a>
+                            </td>
+                            <td class="quantity">
+                                <input type="number" name="quantity_<?=$product['id']?>" value="<?=$cart_products[$product['id']]?>" min="1" max="<?=$product['quantity']?>" placeholder="Quantity" required>
+                            </td>
+                            <td class="price"><?=$product['price']?> zł</td>
+                            <td class="price"><?=$product['price'] * $cart_products[$product['id']]?> zł</td>
+                            <td>
+                                <a href="index.php?page=shopping_cart&remove=<?=$product['id']?>" class="remove"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                </tbody>
+            </table>
+            <div class="subtotal">
+                <span class="text">Kwota do zapłaty</span>
+                <span class="price"> <?=$subtotal?> zł </span>
+            </div>
+            <div class="buttons">
+                <input type="submit" name="order" value="Złóż zamówienie">
+                <input type="submit" name="update" value="Aktualizuj Zawartość koszyka">
+            </div>
+        </form>
     </div>
 <?=template_footer()?>

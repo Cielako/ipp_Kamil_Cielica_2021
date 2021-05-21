@@ -3,11 +3,26 @@
     if(!isset($_SESSION['login'])){
         echo <<<HTML
             <form method="POST" action="index.php?page=register&log&mail&pass&repass">
-                    <h3>Login</h3> <input required type="text" name="log" placeholder="Login"><br />
-                    <h3>E-mail</h3> <input required type="email" name="mail" placeholder="Adres e-mail"><br />
-                    <h3>Hasło</h3> <input required type="password" name="pass" placeholder="Hasło"><br />
-                    <h3>Powtórz Hasło</h3> <input required type="password" name="repass" placeholder="Powtórz hasło"><br />
-                    <input type="submit" value="zarejestruj">
+                    <div class="mb-2">
+                        <label for="loginInput" class="form-label">Login</label>
+                        <input required type="text" name="log" class="form-control" id="loginInput" placeholder="Login">
+                    </div>
+                    <div class="mb-2">
+                        <label for="mailInput" class="form-label">E-mail</label>
+                        <input required type="email" name="mail" class="form-control" id="mailInput" placeholder="Adres e-mail">
+                    </div>
+                    <div class="mb-2">
+                        <label for="passInput" class="form-label">Hasło</label>
+                        <input required type="password" name="pass" class="form-control" id="passInput" placeholder="Hasło">
+                        <div id="passHelp" class="form-text">Twoje hasło musi się składać z minimum 8 znaków !</div>
+                    </div>
+                    <div class="mb-2">
+                        <label for="repassInput" class="form-label">Powtórz Hasło</label>
+                        <input required type="password" name="repass"  class="form-control" id="repassInput" placeholder="Powtórz hasło">
+                    </div>
+                    <div class="buttons">
+                        <input type="submit" value="Zarejestruj się">
+                    </div>
             </form>
         HTML;
     }

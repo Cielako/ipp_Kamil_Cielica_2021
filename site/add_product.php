@@ -3,13 +3,33 @@
     if(isset($_SESSION['login'])&& $_SESSION['login'] =='admin'){
       echo <<<HTML
         <form method="POST" action="index.php?page=add_product&name&category&desc&price&quantity&img">
-            <h3>Nazwa</h3> <input required type="text" name="name" placeholder="nazwa"><br/>
-            <h3>Kategoria</h3> <input required type="text" name="category" placeholder="kategoria"><br/>
-            <h3>Opis</h3> <textarea required type="text" name="desc" placeholder="opis"></textarea><br/>
-            <h3>Cena</h3> <input required type="number" name="price" step="any" min="0" placeholder="cena"><br/>
-            <h3>Ilość</h3> <input required type="number" name="quantity" placeholder="ilość"><br/>
-            <h3>Zdjęcie</h3> <input required type="file" name="img" placeholder="Zdjęcie"><br/>
-            <input type="submit" name="submit" value="Dodaj nowy produkt">
+            <div class="mb-2">
+                <label for="nameInput" class="form-label">Nazwa</label>
+                <input required type="text"  name="name" class="form-control" id="nameInput" placeholder="np. Atari">
+            </div>
+            <div class="mb-2">
+                <label for="catInput" class="form-label">Kategoria</label>
+                <input required type="text"  name="category" class="form-control" id="catInput" placeholder="np. komputer">
+            </div>
+            <div class="mb-2">
+                <label for="descInput" class="form-label">Opis</label>
+                <textarea required resize="none" type="text" rows="6" name="desc" class="form-control" id="descInput" placeholder="np. fajny komputer"></textarea>
+            </div>
+            <div class="mb-2">
+                <label for="priceInput" class="form-label">Cena</label>
+                <input required type="number" step="any" min="0" name="price" class="form-control" id="priceInput" placeholder="Cena za sztukę">
+            </div>
+            <div class="mb-2">
+                <label for="quanInput" class="form-label">Ilość</label>
+                <input required type="number" name="quantity" class="form-control" id="quanInput" placeholder="Ilość sztuk">
+            </div>
+            <div class="mb-3">
+                <label for="imgInput" class="form-label">Zdjęcie</label>
+                <input required type="file" name="img" class="form-control" id="imgInput">
+            </div>
+            <div class="buttons">
+                <input type="submit" name="submit" value="Dodaj nowy produkt">
+            </div>
         </form>
         HTML;
     }

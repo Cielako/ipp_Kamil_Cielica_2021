@@ -4,9 +4,17 @@
     if(!isset($_SESSION['login'])){
       echo <<<HTML
         <form method="POST" action="index.php?page=login&log&pass">
-            <h3>login</h3> <input required type="text" name="log" placeholder="Login"><br />
-            <h3>haslo</h3> <input required type="password" name="pass" placeholder="Hasło"><br />
-            <input type="submit" value="zaloguj">
+            <div class="mb-2">
+                <label for="loginInput" class="form-label">Login</label>
+                <input required type="text" name="log" class="form-control" id="loginInput" placeholder="Login"><br />
+            </div>
+            <div class="mb-2">
+                <label for="passInput" class="form-label">Hasło</label>
+                <input required type="password" name="pass" class="form-control" id="passInput" placeholder="Hasło"><br />
+            </div>
+            <div class="buttons">
+                <input type="submit" value="Zaloguj się">
+            </div>
         </form>
         HTML;
     }

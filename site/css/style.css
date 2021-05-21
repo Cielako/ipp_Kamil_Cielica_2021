@@ -149,6 +149,23 @@ main > .products .buttons {
 	padding-bottom: 100px;
 }
 
+/* Buttons */
+.buttons input[type=submit], button {
+	display: inline-block;
+	text-decoration: none;
+	margin-left: 5px;
+	padding: 12px 20px;
+	border: 0;
+	background: #4e5c70;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+.buttons input[type=submit]:hover {
+	background: #434f61;
+}
+
 /* Shopping Cart */
 main .cart h1 {
     text-align: center;

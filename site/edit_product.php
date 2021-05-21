@@ -3,13 +3,37 @@
     if(isset($_SESSION['login'])&& $_SESSION['login'] =='admin'){
       echo <<<HTML
         <form method="POST" action="index.php?page=edit_product&name&category&desc&price&quantity&img">
-            <h3>Id produktu</h3> <input required type="number" name="id" placeholder="id" value="{$_SESSION['product_data']['id']}"><br/>
-            <h3>Nazwa</h3> <input required type="text" name="name" placeholder="nazwa" value="{$_SESSION['product_data']['name']}"><br/>
-            <h3>Kategoria</h3> <input required type="text" name="category" placeholder="kategoria" value="{$_SESSION['product_data']['category']}"><br/>
-            <h3>Opis</h3> <textarea required type="text" name="desc" placeholder="opis">{$_SESSION['product_data']['desc']}</textarea><br/>
-            <h3>Cena</h3> <input required type="number" name="price" step="any" min="0" placeholder="cena" value="{$_SESSION['product_data']['price']}"><br/>
-            <h3>Ilość</h3> <input required type="number" name="quantity" placeholder="ilość"value="{$_SESSION['product_data']['quantity']}"><br/>
-            <h3>Zdjęcie</h3> <input type="file" name="img"><button id="img_check" name='img_check'>Sprawdź</button>
+            <div class="mb-2">
+                <label for="idInput" class="form-label">Id</label>
+                <input required type="number" name="id" value="{$_SESSION['product_data']['id']}"class="form-control" id="nameInput" placeholder="Nowe ID produktu">
+            </div>
+            <div class="mb-2">
+                <label for="nameInput" class="form-label">Nazwa</label>
+                <input required type="text"  name="name" class="form-control" id="nameInput" value="{$_SESSION['product_data']['name']}" placeholder="Nowa nazwa produktu">
+            </div>
+            <div class="mb-2">
+                <label for="catInput" class="form-label">Kategoria</label>
+                <input required type="text"  name="category" class="form-control" id="catInput" value="{$_SESSION['product_data']['category']}" placeholder="Nowa kategoria produktu">
+            </div>
+            <div class="mb-2">
+                <label for="descInput" class="form-label">Opis</label>
+                <textarea required resize="none" type="text" rows="4" name="desc" class="form-control" id="descInput" placeholder="np. fajny komputer">{$_SESSION['product_data']['desc']}</textarea>
+            </div>
+            <div class="mb-2">
+                <label for="priceInput" class="form-label">Cena</label>
+                <input required type="number" step="any" min="0" name="price" class="form-control" id="priceInput" value="{$_SESSION['product_data']['price']}" placeholder="Cena za sztukę">
+            </div>
+            <div class="mb-2">
+                <label for="quanInput" class="form-label">Ilość</label>
+                <input required type="number" name="quantity" class="form-control" id="quanInput" value="{$_SESSION['product_data']['quantity']}" placeholder="Ilość sztuk">
+            </div>
+            <div class="mb-2">
+                <label for="imgInput" class="form-label">Zdjęcie</label>
+                <input type="file" name="img" class="form-control" id="imgInput">
+            </div>
+            <div class="buttons">
+                <button id="img_check" name='img_check'>Sprawdź</button>
+           
         HTML;
         // Podgląd zdjęcia danego produktu
         if(empty($_POST['img'])){
@@ -21,7 +45,7 @@
                 echo("<img src='imgs/{$_POST['img']}' alt='{$_POST['img']}' width='100px' height='100px'> ");
             }
         }
-        echo ("<br/><br/><input type='submit' name='submit' value='Edytuj produkt'></form>");
+        echo ("<input type='submit' name='submit' value='Edytuj produkt'></div></form>");
 
         if (isset($_POST['submit'])){
             // Zapytanie odpowiadające za edycję produktu 

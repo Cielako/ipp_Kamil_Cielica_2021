@@ -45,20 +45,22 @@ if (isset($_GET['id'])) {
             <span><?=$product['desc']?></span>
         </div>
         </br>
-        <?php
-            if (isset($_SESSION['login'])&& $_SESSION['login'] == 'admin'){
-                $_SESSION['product_data'] = $product;
-                echo <<<HTML
+    </div>
+</div>
+<?php
+    if (isset($_SESSION['login'])&& $_SESSION['login'] == 'admin'){
+            $_SESSION['product_data'] = $product;
+            echo <<<HTML
+                <div class="d-flex flex-row">
                     <form method="POST" action="index.php?page=edit_product">
                         <button type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edytuj produkt"><i class='fa fa-pencil-square-o'></i></button>
                     </form>
                     <form method="POST" action="index.php?page=delete_product&id={$_GET['id']}">
-                        <button type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Usuń Produkt"><i class='fa fa-trash-o'></i></button>
+                            <button type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Usuń Produkt"><i class='fa fa-trash-o'></i></button>
                     </form>
-                HTML; 
-            }
-        ?>
-    </div>
-</div>
+                </div>
+            HTML; 
+    }
+?>
 
 <?=template_footer()?>

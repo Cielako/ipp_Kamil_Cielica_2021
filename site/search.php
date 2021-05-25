@@ -20,8 +20,8 @@ if (isset($_POST['se'])) {
     if (!$products) {
         // Zwracamy prosty komunikat kiedy id produktu nie istnieje
         template_header('Nie znaleziono');
-
-        exit('Szukany produkt nie istnieje spróbuj ponownie !');       
+            echo("Szukany produkt o nazwie: {$keyword} nie istnieje spróbuj ponownie :)");    
+        template_footer();    
     }
 } else {
     // Zwracamy prosty komunikat jeżeli id nie zostało sprecyzowane w pasku URL
@@ -37,18 +37,12 @@ if (isset($_POST['se'])) {
 
     $total_searched_products = $pdo->query("SELECT * FROM products WHERE (name LIKE '%$keyword%') OR (id LIKE '%$keyword%') OR (category LIKE '%$keyword%')")->rowCount();
     // Sprawdzamy czy produkt istnieje
-    if (!$products) {
-        // Zwracamy prosty komunikat kiedy id produktu nie istnieje
-        template_header('Nie znaleziono');
-
-        exit('Szukany produkt nie istnieje spróbuj ponownie !');       
-    }
 }
 ?>
 
 <?=template_header('Znalezione produkty')?>
 <div class="products content-wrapper">
-        <h1>Produkty</h1>
+        <h1>Produkty o nazwie: <?=$keyword?></h1>
         <p>Liczba znalezionych produktów: <?=$total_searched_products?></p>
         <hr>
         <div class="products-wrapper">

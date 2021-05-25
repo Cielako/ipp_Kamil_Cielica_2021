@@ -53,13 +53,14 @@ echo <<<HTML
     <link rel="stylesheet" href="./css/style.css">
     <title>$title</title> 
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    
 </head>
 <body>
  <!-- Top Menu bar -->
@@ -75,6 +76,7 @@ echo <<<HTML
                     <!-- Navbar menu -->
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a a class="nav-link" data-bs-toggle="collapse" data-bs-target="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Wyszukaj</a></li>
                             <li class="nav-item"><a class="nav-link"  href="index.php">Strona Główna</a></li>
                             <li class="nav-item"><a class="nav-link"  href="index.php?page=products">Produkty</a></li>
                             <li class="nav-item"><a class="nav-link"  href="#">Kontakt</a></li>
@@ -92,15 +94,17 @@ echo <<<HTML
                     </div>
                 </div>
             </nav>
-            <!-- Search Bar -->
-            <nav class="navbar srchbar navbar-light bg-light">
-                <form name="searchform" method ="POST" action ="index.php?page=search&se" class="container mx-auto">
-                    <div class="input-group">                    
-                        <input name="se" type="text" class="form-control" placeholder="Czego szukasz?">
-                        <input type="submit" class="btn btn-outline-dark input-group-text" id="basic-addon1" value="Szukaj">
-                    </div>
-                </form>
-            </nav>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <!-- Search Bar -->
+                    <form name="searchform" method ="POST" action ="index.php?page=search&se" class="container mx-auto">
+                        <div class="input-group">                    
+                            <input name="se" type="text" class="form-control" placeholder="Czego szukasz?">
+                            <input type="submit" class="btn btn-outline-dark input-group-text" id="basic-addon1" value="Szukaj">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </nav>
     </header>
     <!--Main site -->
@@ -123,9 +127,8 @@ echo <<<HTML
    </div>
    <!-- Copyright -->
 </footer>
-
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </html>
 HTML;    
 }

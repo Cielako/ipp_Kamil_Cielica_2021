@@ -96,11 +96,20 @@
                 <tbody>
                     <?php 
                         if (empty($products)){
-                            echo<<<HTML
-                                <tr>
-                                    <td colspan="6" style="text-align:center;">Twój koszyk jest pusty</td>
-                                </tr>
-                            HTML;
+                            if(isset($_SESSION['login'])) {
+                                echo<<<HTML
+                                    <tr>
+                                        <td colspan="6" style="text-align:center;">Twój koszyk jest pusty</td>
+                                    </tr>
+                                HTML;
+                            }
+                            else {
+                                echo<<<HTML
+                                    <tr>
+                                        <td colspan="6" style="text-align:center;">Zaloguj się aby móc dodawać produkty do koszyka</td>
+                                    </tr>
+                                HTML;
+                            }
                         }
                         else foreach ($products as $product):
                     ?>
@@ -129,10 +138,17 @@
                 <span class="text">Kwota do zapłaty</span>
                 <span class="price"> <?=$subtotal?> zł </span>
             </div>
-            <div class="buttons">
-                <input type="submit" name="order" value="Złóż zamówienie">
-                <input type="submit" name="update" value="Aktualizuj Zawartość koszyka">
-            </div>
+            <?php 
+                if(isset($_SESSION['login'])) {
+                    echo<<<HTML
+                         <div class="buttons text-center">
+                            <input type="submit" name="order" value="Złóż zamówienie">
+                            <input type="submit" name="update" value="Aktualizuj Zawartość koszyka">
+                        </div>
+                    HTML;
+                }
+            ?>
+           
         </form>
     </div>
 <?=template_footer()?>

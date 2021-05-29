@@ -3,14 +3,18 @@
 <?php 
     if(!isset($_SESSION['login'])){
       echo <<<HTML
+        <h1>Zaloguj się</h1>
+        <br>
         <form method="POST" action="index.php?page=login&log&pass">
-            <div class="mb-2">
+            <div class="form-floating input-group mb-3">
+                <input required type="text" name="log" class="form-control" id="loginInput" placeholder="Login">
                 <label for="loginInput" class="form-label">Login</label>
-                <input required type="text" name="log" class="form-control" id="loginInput" placeholder="Login"><br />
+                <span class="input-group-text" id="basic-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
             </div>
-            <div class="mb-2">
+            <div class="form-floating input-group mb-3">
+                <input required type="password" name="pass" class="form-control" id="passInput" placeholder="Hasło" >
                 <label for="passInput" class="form-label">Hasło</label>
-                <input required type="password" name="pass" class="form-control" id="passInput" placeholder="Hasło"><br />
+                <span class="input-group-text" id="basic-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
             </div>
             <div class="buttons">
                 <input type="submit" value="Zaloguj się">

@@ -45,6 +45,6 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
   - [x] wyświetlanie zawartości koszyka
   - [ ] korekty w kodzie (jeśli zaistnieją jakieś bugi)
 - 25.05.2021  - Etap V 
-  - [ ] implementacja dodatkowych funkcjonalności (nowe pomysły podczas pracy nad projektem)
+  - [x] implementacja dodatkowych funkcjonalności (nowe pomysły podczas pracy nad projektem)
 - 1.06.2021  - Etap VI (Czas na drobne poprawki przed prezentacją końcową)
 - 8.06.2021  - Prezentacja końcowa                        

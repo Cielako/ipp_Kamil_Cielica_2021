@@ -19,13 +19,13 @@ if (isset($_GET['id'])) {
 
 <?=template_header('Produkt')?>
 
-<div class="productpage">
+<div class="productpage rounded">
     <div id="productpage_left">
-        <img src="imgs/<?=$product['img']?>"alt="<?=$product['name']?>">
+        <img src="imgs/<?=$product['img']?>" class="img img-thumbnail" alt="<?=$product['name']?>">
     </div>
     <div id="productpage_right">
         <h1 class="name"><?=$product['name']?></h1>
-        <span class="price">Cena: <?=$product['price']?> zł</span>
+        <span class="price text-center rounded">Cena: <?=$product['price']?> zł</span>
         <br>
        <form action="index.php?page=shopping_cart" method="POST" >
             <?php 
@@ -33,11 +33,13 @@ if (isset($_GET['id'])) {
                 if(isset($_SESSION['login'])){
                     echo <<<HTML
                         <input type="hidden" name="product_id" value="$product[id]">
-                        <input type="number" name="quantity" value="1" min="1" max="$product[quantity]"><span> Pozostało: $product[quantity]  sztuk </span><br>
-                        <input type='submit' value='Dodaj do koszyka'>
+                        <input type="number" class="form-label" name="quantity" value="1" min="1" max="$product[quantity]"><span> Pozostało: $product[quantity]  sztuk </span><br>
+                        <div class="buttons">
+                            <input type='submit' value='Dodaj do koszyka'>
+                        </div>
                     HTML;
                 }
-                else echo("Zaloguj się aby móc dokonać zakupu")
+                else echo("<p class='text-center'>Zaloguj się aby móc dokonać zakupu</p>")
             ?>     
        </form>
         <div class="description">

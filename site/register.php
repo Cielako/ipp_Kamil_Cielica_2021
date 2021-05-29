@@ -2,23 +2,28 @@
 <?php 
     if(!isset($_SESSION['login'])){
         echo <<<HTML
+               
+            <h1>Utwórz nowe konto</h1>
+            <br>
             <form method="POST" action="index.php?page=register&log&mail&pass&repass">
-                    <div class="mb-2">
-                        <label for="loginInput" class="form-label">Login</label>
+                    <div class="form-floating input-group mb-3">
                         <input required type="text" name="log" class="form-control" id="loginInput" placeholder="Login">
+                        <label for="loginInput" class="form-label">Login</label>
+                        <span class="input-group-text" id="basic-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
                     </div>
-                    <div class="mb-2">
-                        <label for="mailInput" class="form-label">E-mail</label>
+                    <div class="form-floating input-group mb-3">
                         <input required type="email" name="mail" class="form-control" id="mailInput" placeholder="Adres e-mail">
+                        <label for="mailInput" class="form-label">E-mail</label> 
+                        <span class="input-group-text" id="basic-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                     </div>
-                    <div class="mb-2">
+                    <div class="form-floating input-group mb-3">
+                        <input required type="password" name="pass" class="form-control" id="passInput" placeholder="Hasło" >
                         <label for="passInput" class="form-label">Hasło</label>
-                        <input required type="password" name="pass" class="form-control" id="passInput" placeholder="Hasło">
-                        <div id="passHelp" class="form-text">Twoje hasło musi się składać z minimum 8 znaków !</div>
+                        <span class="input-group-text" id="basic-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
                     </div>
-                    <div class="mb-2">
-                        <label for="repassInput" class="form-label">Powtórz Hasło</label>
+                    <div class="form-floating mb-2">
                         <input required type="password" name="repass"  class="form-control" id="repassInput" placeholder="Powtórz hasło">
+                        <label for="repassInput" class="form-label">Powtórz Hasło</label>
                     </div>
                     <div class="buttons">
                         <input type="submit" value="Zarejestruj się">

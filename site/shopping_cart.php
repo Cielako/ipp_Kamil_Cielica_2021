@@ -78,6 +78,13 @@
         }
     }
 
+    // Przejście do potwierdzenia zamówienia
+    if (isset($_POST['order']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+        unset($_SESSION['cart']);
+        header('Location: index.php?page=confirm_order');
+        exit;
+    }
+
 ?>
 <?=template_header('Koszyk')?>
     <div class="cart">

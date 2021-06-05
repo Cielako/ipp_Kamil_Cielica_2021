@@ -19,6 +19,7 @@
             <div class="buttons">
                 <input type="submit" value="Zaloguj się">
             </div>
+            <p>Nie masz konta? <a href="index.php?page=register">zarejestruj się</a></p>
         </form>
         HTML;
     }

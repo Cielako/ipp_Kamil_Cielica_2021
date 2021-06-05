@@ -42,7 +42,7 @@ if (isset($_POST['se'])) {
 
 <?=template_header('Znalezione produkty')?>
 <div class="products content-wrapper">
-        <h1>Produkty o nazwie: <?=$keyword?></h1>
+        <h1>Produkty dla: "<?=$keyword?>"</h1>
         <p>Liczba znalezionych produktów: <?=$total_searched_products?></p>
         <hr>
         <div class="products-wrapper">

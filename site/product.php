@@ -25,6 +25,8 @@ if (isset($_GET['id'])) {
     </div>
     <div id="productpage_right">
         <h1 class="name"><?=$product['name']?></h1>
+        <p>Kod produktu: <?=$product['id']?></p>
+        <p>Kategoria: <?=$product['category']?></p>
         <span class="price text-center rounded">Cena: <?=$product['price']?> zł</span>
         <br>
        <form action="index.php?page=shopping_cart" method="POST" >

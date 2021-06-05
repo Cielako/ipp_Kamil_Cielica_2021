@@ -79,7 +79,7 @@ echo <<<HTML
                             <li class="nav-item"><a a class="nav-link" data-bs-toggle="collapse" data-bs-target="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Wyszukaj</a></li>
                             <li class="nav-item"><a class="nav-link"  href="index.php">Strona Główna</a></li>
                             <li class="nav-item"><a class="nav-link"  href="index.php?page=products">Produkty</a></li>
-                            <li class="nav-item"><a class="nav-link"  href="#">Kontakt</a></li>
+                            <li class="nav-item"><a class="nav-link"  href="index.php?page=contact">Kontakt</a></li>
                         </ul>
                     </div>
                     <!-- Navbar user icon -->

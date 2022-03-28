@@ -27,6 +27,9 @@ Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprz
 # Wizja graficzna strony głównej 
 ![Wizja graficzna strony głównej](/wizja.png?raw=true "wizja")
 
+# Prezentacja strony
+![Stan faktyczny strony głównej](/Prezentacja_Wizualna.gif?raw=true "prezentacja")
+
 # Harmonogram:
 - 16.03.2021 - Propozycja projektu 
 - 30.03.2021  - Etap I

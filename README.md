@@ -1,11 +1,12 @@
 # ipp_Kamil_Cielica_2021
 Indywidualny projekt programistyczny - ISSP
 
+Dane administratora - login: admin hasło: admin
 # Pomysł na projekt 
-Stworzenie prostego i przejrzystego sklepu internetowego (Prawdopodobnie ze sprzętem komputerowym).
+Stworzenie prostego i przejrzystego sklepu internetowego.
 
 # Funkcjonalności:
-- rejestracja/logowanie (haszowanie hasła) 
+- rejestracja/logowanie (haszowanie hasła - sha256) 
 - panel administratora serwisu (możliwość dodawania i usuwania produktów z poziomu strony internetowej)
 - wyświetlanie wszystkich produktów (podział na kategorie produktów)
 - strona poszczególnego produktu
